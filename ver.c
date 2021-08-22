@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <stdlib.h>
 
-int CurrentMajorVersionNumber(void) {
+DWORD CurrentMajorVersionNumber(VOID) {
 	DWORD val;
 	DWORD valSize = sizeof(val);
 	RegGetValueA(
@@ -17,7 +17,7 @@ int CurrentMajorVersionNumber(void) {
 	return val;
 }
 
-int CurrentMinorVersionNumber(void) {
+DWORD CurrentMinorVersionNumber(VOID) {
 	DWORD val;
 	DWORD valSize = sizeof(val);
 	RegGetValueA(
@@ -32,7 +32,7 @@ int CurrentMinorVersionNumber(void) {
 	return val;
 }
 
-int CurrentBuildNumber(void) {
+DWORD CurrentBuildNumber(VOID) {
 	CHAR buf[8];
 	DWORD bufSize = sizeof(buf);
 	RegGetValueA(
@@ -47,7 +47,7 @@ int CurrentBuildNumber(void) {
 	return atoi(buf);
 }
 
-int UpdateBuildRevision(void) {
+DWORD UpdateBuildRevision(VOID) {
 	DWORD val;
 	DWORD valSize = sizeof(val);
 	RegGetValueA(
